@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ShellSort
+{
+    public static void shellSorting(int array[])
+    {
+        int gap, i;
+        for(gap = array.length/2; gap > 0; gap/=2)
+        {
+            for(i = gap; i < array.length; i++)
+            {
+                int elementValue = array[i];
+                int j = i;
+
+                while(j >= gap && array[j-gap] > elementValue)
+                {
+                    array[j] = array[j-gap];
+                    j -= gap;
+                }
+                array[j] = elementValue;
+            }
+        }
+        for(i = 0; i < array.length; i++)
+        {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array: ");
+        int size = sc.nextInt();
+        int intArray[] = new int[size];
+        for(int i = 0; i < size; i++)
+        {
+            System.out.println("Enter "+ i +" element in array: ");
+            intArray[i] = sc.nextInt();
+        }
+
+        shellSorting(intArray);
+    }
+}
