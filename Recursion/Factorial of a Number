@@ -1,0 +1,38 @@
+package Recursion;
+
+import java.util.Scanner;
+
+public class Factorial 
+{
+	public int factorial(int number)
+	{
+		if(number == 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return (number * factorial(number - 1));
+		}
+	}
+	
+	public void print(int result)
+	{
+		System.out.println(result);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Factorial f = new Factorial();
+		
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		
+		sc.close();
+		
+		int result = f.factorial(number);
+		
+		f.print(result);
+	}
+
+}
