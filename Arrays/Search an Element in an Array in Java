@@ -1,0 +1,32 @@
+package Arrays;
+
+public class SearchElement {
+	
+	static int array[] = new int[10];
+	
+	public void search(int valueToSearch)
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			if(array[i] == valueToSearch)
+			{
+				System.out.println("Value found! ");
+				System.out.println("Index of " + valueToSearch + " is: " + i);
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		SearchElement se = new SearchElement();
+		
+		array[0] = 3;
+		array[1] = 2;
+		array[2] = 5;
+		array[3] = 6;
+		
+		int valueToSearch = 5;
+		
+		se.search(valueToSearch);
+	}
+
+}
