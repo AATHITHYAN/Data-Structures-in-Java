@@ -1,0 +1,40 @@
+package Arrays;
+
+//import java.lang.reflect.Array;
+
+public class OndDArray {
+	int array[] = new int[10];
+			
+	public OndDArray()
+	{		
+		for(int i = 0; i < array.length; i++)
+		{
+			array[i] = Integer.MIN_VALUE;
+		}
+	}
+	
+	public void traverseArray()
+	{
+		try
+		{
+			for(int i = 0; i < array.length; i++)
+			{
+				System.out.println(array[i] + " ");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Array no longer exists! ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Creating a blank array of size 10");
+		OndDArray obj1 = new OndDArray();
+		
+		System.out.println("Printing the Array...");
+		obj1.traverseArray();
+		System.out.println();
+	}
+
+}
