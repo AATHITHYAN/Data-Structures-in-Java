@@ -1,0 +1,45 @@
+package Arrays;
+
+public class DeleteElement {
+	
+	static int array[] = new int[3];
+	
+	public void delete(int valueToDelete)
+	{   
+		int size = array.length;
+		
+		if(array[size - 1] == valueToDelete)
+		{
+			size--;
+		}
+		
+		for(int i = 0; i < size - 1; i++)
+		{
+			if(array[i] == valueToDelete)
+			{
+				array[i] = array[i + 1];
+				array[i + 1] = Integer.MIN_VALUE;
+				size--;
+			}
+		}
+		
+		for(int i = 0; i < size; i++)
+		{
+			System.out.println(array[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		DeleteElement de = new DeleteElement();
+		
+		array[0] = 1;
+		array[1] = 5;
+		array[2] = 6;
+		
+		int valueToDelete = 5;
+		
+		de.delete(valueToDelete);
+	}
+
+}
