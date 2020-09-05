@@ -1,0 +1,23 @@
+package Arrays;
+
+public class AccessElement {
+
+	static int array[] = new int[10];
+	
+	public void access(int position)
+	{
+		System.out.println(array[position]);
+	}
+	
+	public static void main(String[] args) {
+		
+		AccessElement ae = new AccessElement();
+		
+		array[0] = 5;
+		array[1] = 6;
+		array[2] = 7;
+		
+		ae.access(2);
+   }
+
+}
