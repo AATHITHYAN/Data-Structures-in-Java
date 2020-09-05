@@ -1,0 +1,33 @@
+package Arrays;
+
+public class InsertInArray {
+	int array[] = new int[10];
+	
+	public void insert(int location, int valueToBeInserted)
+	{
+		try
+		{
+			if(location < array.length)
+			{
+				array[location] = valueToBeInserted;
+				System.out.println("Successfully inserted" + valueToBeInserted + " at location: " + location);
+			}
+			else
+			{
+				System.out.println("This cell is already occupied by another value.");
+			}
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Invalid index to access array! ");
+		}
+		
+	}
+	public static void main(String[] args) {
+		InsertInArray iia = new InsertInArray();
+		iia.insert(0, 1);
+		iia.insert(1, 2);
+		iia.insert(2, 3);
+	}
+
+}
