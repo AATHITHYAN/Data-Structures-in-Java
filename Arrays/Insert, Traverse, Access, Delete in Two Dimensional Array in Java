@@ -1,0 +1,100 @@
+package Arrays;
+
+public class TwoDArray {
+	int array[][] = null;
+	
+	public TwoDArray(int row, int col)
+	{
+		this.array = new int[row][col];
+		for(int i = 0; i < row; i++)
+		{
+			for(int j = 0; j < col; j++)
+			{
+				array[i][j] = Integer.MIN_VALUE;
+			}
+		}
+	}
+	
+	public void traverse()
+	{
+		try
+		{
+			System.out.println("Printing the array now");
+			for(int i = 0; i < array.length; i++)
+			{
+				for(int j = 0; j < array.length; j++)
+				{
+					System.out.print(array[i][j] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println("");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Array does not exists");
+		}
+	}
+	
+	public void insert(int row, int col, int value)
+	{
+		try
+		{
+			if(array[row][col] == Integer.MIN_VALUE)
+			{
+				array[row][col] = value;
+				System.out.println("Sucessfully Inserted " + value + " in the array.");
+			}
+			else
+			{
+				System.out.println("This cell is already occupied by another value.");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Invalid index to access array! ");
+		}
+	}
+	
+	public void access(int row, int col)
+	{
+		System.out.println("Accessing Row: " + row + ", col: " + col + "...");
+		
+		try
+		{
+			System.out.println("Cell value is: " + array[row][col]);
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Invalid index to access array! ");
+		}
+	}
+	
+	public void delete(int row, int col)
+	{
+		System.out.println("Delete an Element ");
+		try
+		{
+			System.out.println("Successfully Deleted: " + array[row][col]);
+			array[row][col] = Integer.MIN_VALUE;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Can't delete the value or it is not in the range");
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		TwoDArray tda = new TwoDArray(5, 5);
+		
+		tda.insert(0, 0, 5);
+		
+		tda.access(0, 0);
+		
+		tda.delete(0, 0);
+		
+		tda.traverse();
+	}
+
+}
